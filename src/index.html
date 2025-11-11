@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+       <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora | Web Developer Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration for Inter Font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-blue': '#3b82f6',
+                        'secondary-dark': '#1e293b',
+                        'accent-cyan': '#22d3ee',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    // Custom keyframes for pulse and fade-in
+                    keyframes: {
+                        'pulse-subtle': {
+                            '0%, 100%': { opacity: 0.9, transform: 'scale(1)' },
+                            '50%': { opacity: 1, transform: 'scale(1.02)' },
+                        },
+                        'fade-in-up': {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                    animation: {
+                        'pulse-subtle': 'pulse-subtle 4s ease-in-out infinite',
+                        'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom scroll behavior for smooth navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom cursor style for the typing effect */
+        .typing-cursor {
+            border-right: 2px solid;
+            animation: blink-caret 0.75s step-end infinite;
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: theme('colors.accent-cyan') }
+        }
+        /* Hidden by default for JS fade-in */
+        .animated-section {
+            opacity: 0;
+        }
+
+    
+    </style>
+</head>
+
+
+<body class="bg-gray-900 text-gray-100 font-sans">
+    <style>
+        /* Target the body element for the background */
+        body {
+            /* 1. Specify the image file path */
+           
+            background-image: url('/src/web96.jpg');
+
+            /* 2. Control image repetition (no-repeat is common) */
+            background-repeat: no-repeat;
+
+            /* 3. Control how the image covers the area (cover is common) */
+           background-size:cover;
+background-position:center center;
+            /* 4. Control image scrolling (fixed keeps it in place when scrolling) */
+            background-attachment: sticky;
+
+            /* Optional: Set body height to fill the viewport */
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+    
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm shadow-xl">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-extrabold tracking-tight text-accent-cyan hover:text-primary-blue transition duration-300">
+                BASEERAT<span class="text-gray-300">KHALID</span>
+            </a>
+            <div class="flex space-x-6 text-lg font-medium">
+                <a href="#projects" class="hover:text-primary-blue transition duration-200">Projects</a>
+                <a href="#skills" class="hover:text-primary-blue transition duration-200">Skills</a>
+                <a href="#contact" class="hover:text-primary-blue transition duration-200">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. Hero Section (Animated Typing) -->
+        <section id="hero" class="min-h-screen flex items-center justify-center text-center p-4" 
+                 style="background-image: radial-gradient(at top left, #1f2937, transparent), radial-gradient(at bottom right, #0c4a6e, transparent);">
+            <div class="max-w-4xl space-y-8 animate-[fade-in-up_1s_ease-out_forwards]">
+                <p class="text-xl md:text-2xl text-gray-400 font-light">Salam, I'm BASEERAT. I build websites for your work.</p>
+                
+                <h1 class="text-4xl sm:text-6xl lg:text-8xl font-black leading-tight text-white">
+                    <span class="text-accent-cyan">Creative</span> Solutions. <br class="hidden sm:block">
+                    <span id="typing-text" class="typing-cursor"></span>
+                </h1>
+
+                <a href="#projects" class="inline-block px-8 py-3 mt-4 text-lg font-semibold rounded-full bg-primary-blue text-white shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-primary-blue focus:ring-opacity-50">
+                    View My Work
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. Projects Section (Animated Cards) -->
+        <section id="projects" class="py-20 animated-section" data-delay="50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-accent-cyan">Featured Projects</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Project Card 1 -->
+                    <div class="group bg-secondary-dark p-6 rounded-xl shadow-2xl transition duration-300 transform hover:scale-[1.03] hover:shadow-primary-blue/30 border border-gray-700 hover:border-accent-cyan/50">
+                        <div class="h-48 bg-gray-800 rounded-lg mb-4 overflow-hidden">
+                            <!-- IMAGE INSERTION POINT -->
+                            <img src="/src/web43.jpg" 
+                                alt="Screenshot of Project Nova" 
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-105"
+                                onerror="this.onerror=null; this.src='https://placehold.co/600x300/1e293b/94a3b8?text=Image+Unavailable';" />
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2 text-white">Project Nova</h3>
+                        <p class="text-gray-400 mb-4">A collaborative real-time note-taking application built with React and Firestore for persistent storage.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs font-medium bg-primary-blue/20 text-primary-blue px-3 py-1 rounded-full">React</span>
+                            <span class="text-xs font-medium bg-accent-cyan/20 text-accent-cyan px-3 py-1 rounded-full">Tailwind</span>
+                            <span class="text-xs font-medium bg-gray-600/20 text-gray-300 px-3 py-1 rounded-full">Firestore</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="group bg-secondary-dark p-6 rounded-xl shadow-2xl transition duration-300 transform hover:scale-[1.03] hover:shadow-primary-blue/30 border border-gray-700 hover:border-accent-cyan/50">
+                        <div class="h-48 bg-gray-gray-800 rounded-lg mb-4 overflow-hidden">
+                            <!-- IMAGE INSERTION POINT -->
+                            <img src="/src/wb4.jpg" 
+                                alt="Screenshot of Data Visualization Engine" 
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-105"
+                                onerror="this.onerror=null; this.src='https://placehold.co/600x300/1e293b/94a3b8?text=Image+Unavailable';" />
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2 text-white">Data Visualization Engine</h3>
+                        <p class="text-gray-400 mb-4">An interactive dashboard utilizing D3.js to render complex financial datasets with animated charts.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs font-medium bg-gray-600/20 text-gray-300 px-3 py-1 rounded-full">D3.js</span>
+                            <span class="text-xs font-medium bg-primary-blue/20 text-primary-blue px-3 py-1 rounded-full">Vue.js</span>
+                            <span class="text-xs font-medium bg-accent-cyan/20 text-accent-cyan px-3 py-1 rounded-full">API</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="group bg-secondary-dark p-6 rounded-xl shadow-2xl transition duration-300 transform hover:scale-[1.03] hover:shadow-primary-blue/30 border border-gray-700 hover:border-accent-cyan/50">
+                        <div class="h-48 bg-gray-800 rounded-lg mb-4 overflow-hidden">
+                            <!-- IMAGE INSERTION POINT -->
+                            <img src="/src/web44.jpg" 
+                                alt="Screenshot of 3D Solar System Simulator" 
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-105"
+                                onerror="this.onerror=null; this.src='https://placehold.co/600x300/1e293b/94a3b8?text=Image+Unavailable';" />
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-2 text-white">3D Solar System Simulator</h3>
+                        <p class="text-gray-400 mb-4">A physics-based web simulation of the solar system using Three.js for 3D rendering.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs font-medium bg-accent-cyan/20 text-accent-cyan px-3 py-1 rounded-full">Three.js</span>
+                            <span class="text-xs font-medium bg-primary-blue/20 text-primary-blue px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="text-xs font-medium bg-gray-600/20 text-gray-300 px-3 py-1 rounded-full">WebGL</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Skills & About Section (Animated List) -->
+        <section id="skills" class="py-20 animated-section" data-delay="150">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-accent-cyan">My Toolkit</h2>
+                <div class="grid md:grid-cols-3 gap-10">
+                    
+                    <!-- Frontend Column -->
+                    <div class="bg-secondary-dark p-8 rounded-xl shadow-2xl border-t-4 border-primary-blue/50">
+                        <h3 class="text-2xl font-semibold mb-6 text-primary-blue flex items-center">
+                            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1v-3M2 10a10 10 0 1020 0A10 10 0 002 10z"></path></svg>
+                            Frontend Development
+                        </h3>
+                        <ul class="space-y-3 text-gray-300 text-lg">
+                            <li class="flex items-center"><span class="text-primary-blue mr-3">&raquo;</span> HTML5, CSS3, JavaScript (ES6+)</li>
+                            <li class="flex items-center"><span class="text-primary-blue mr-3">&raquo;</span> React.js, Angular (Standalone)</li>
+                            <li class="flex items-center"><span class="text-primary-blue mr-3">&raquo;</span> Tailwind CSS, Responsive Design</li>
+                            <li class="flex items-center"><span class="text-primary-blue mr-3">&raquo;</span> State Management (Context, Zustand)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Backend Column -->
+                    <div class="bg-secondary-dark p-8 rounded-xl shadow-2xl border-t-4 border-accent-cyan/50">
+                        <h3 class="text-2xl font-semibold mb-6 text-accent-cyan flex items-center">
+                            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V8a2 2 0 012-2h14a2 2 0 012 2v2a2 2 0 01-2 2M5 12c.168 0 .332.01.5.031L5 12z"></path></svg>
+                            Backend & Database
+                        </h3>
+                        <ul class="space-y-3 text-gray-300 text-lg">
+                            <li class="flex items-center"><span class="text-accent-cyan mr-3">&raquo;</span> Node.js (Express), Python (Flask)</li>
+                            <li class="flex items-center"><span class="text-accent-cyan mr-3">&raquo;</span> RESTful API Design</li>
+                            <li class="flex items-center"><span class="text-accent-cyan mr-3">&raquo;</span> Firestore / Firebase Integration</li>
+                            <li class="flex items-center"><span class="text-accent-cyan mr-3">&raquo;</span> MongoDB, Basic SQL</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tools Column -->
+                    <div class="bg-secondary-dark p-8 rounded-xl shadow-2xl border-t-4 border-gray-500/50">
+                        <h3 class="text-2xl font-semibold mb-6 text-gray-300 flex items-center">
+                            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37a1.724 1.724 0 002.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            Tools & Workflow
+                        </h3>
+                        <ul class="space-y-3 text-gray-300 text-lg">
+                            <li class="flex items-center"><span class="text-gray-400 mr-3">&raquo;</span> Git, GitHub/GitLab</li>
+                            <li class="flex items-center"><span class="text-gray-400 mr-3">&raquo;</span> Docker (Basic), Netlify/Vercel</li>
+                            <li class="flex items-center"><span class="text-gray-400 mr-3">&raquo;</span> Webpack/Vite</li>
+                            <li class="flex items-center"><span class="text-gray-400 mr-3">&raquo;</span> Agile Methodology (Scrum)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Contact Section -->
+        <section id="contact" class="py-20 animated-section" data-delay="250">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold mb-4 text-accent-cyan">Let's Build Something Great</h2>
+                <p class="text-gray-400 text-xl max-w-2xl mx-auto mb-10">
+                    Whether you have a question or just want to say hi, I'll do my best to get back to you!
+                    <br>
+                    baseeratkhalid239@gmail.com
+                </p>
+                <a href="mailto:alex@example.com" class="inline-block px-10 py-4 text-xl font-bold rounded-full border-2 border-primary-blue text-white shadow-xl transition duration-300 transform hover:bg-primary-blue hover:text-white hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary-blue focus:ring-opacity-50">
+                    Get in Touch
+                </a>
+            </div>
+        </section>
+
+    </main>
+    <body>
+  
+
+
+    <!-- Footer -->
+    <footer class="bg-secondary-dark mt-10 py-6">
+        <div class="container mx-auto px-6 text-center text-gray-500 text-sm">
+            <p>&copy; BASEERAT KHALID Portfolio. Built with Tailwind CSS and Pure JavaScript.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Animations and Interactivity -->
+    <script>
+        const texts = ["Modern Websites.", "Interactive Apps.", "Clean Code.", "Fast Interfaces."];
+        let textIndex = 0;
+        let charIndex = 0;
+        const typingSpeed = 75; // ms
+        const eraseSpeed = 50; // ms
+        const delayBetweenTexts = 1500; // ms
+
+        const typingTextElement = document.getElementById('typing-text');
+
+        function type() {
+            if (textIndex < texts.length) {
+                const currentText = texts[textIndex];
+                if (charIndex < currentText.length) {
+                    typingTextElement.textContent += currentText.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, typingSpeed);
+                } else {
+                    // Start erasing after a delay
+                    setTimeout(erase, delayBetweenTexts);
+                }
+            } else {
+                // Loop back to the first text
+                textIndex = 0;
+                setTimeout(type, typingSpeed);
+            }
+        }
+
+        function erase() {
+            const currentText = texts[textIndex];
+            if (charIndex > 0) {
+                typingTextElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, eraseSpeed);
+            } else {
+                // Move to the next text and start typing
+                textIndex++;
+                setTimeout(type, typingSpeed);
+            }
+        }
+
+        // --- Scroll Reveal Animation ---
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    const delay = parseInt(target.getAttribute('data-delay') || '0');
+                    
+                    // Apply animation with a delay
+                    setTimeout(() => {
+                        target.style.opacity = 1;
+                        target.style.animation = `fade-in-up 0.8s ease-out forwards`;
+                    }, delay);
+                    
+                    // Stop observing once it's animated
+                    observer.unobserve(target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animated-section').forEach(section => {
+            observer.observe(section);
+        });
+
+
+        // Start the typing animation when the window loads
+        window.onload = function() {
+            type();
+        };
+
+    </script>
+</body>
+</html>

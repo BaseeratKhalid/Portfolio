@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<section id="maududi" class="section maududi-section">
+            <div class="container">
+                <h3>بانی جماعت: سید ابوالاعلیٰ مودودیؒ</h3>
+                
+                <div class="maududi-grid">
+                    
+                    <div class="maududi-image">
+                        <img src="maulana-maududi.jpg" alt="سید ابوالاعلیٰ مودودی">
+                    </div>
+
+                    <div class="maududi-text-content">
+                        <p>مولانا سید ابوالاعلیٰ مودودیؒ اسلامی دنیا کی اکیسویں صدی کے سب سے بڑے مفکر، مفسر، اور اسلامی تحریک کے بانی تھے۔ انہوں نے نہ صرف اسلام کی حقیقی تعبیر پیش کی، بلکہ اسے ایک مکمل ضابطۂ حیات کے طور پر نافذ کرنے کے لیے ایک منظم اور ہمہ گیر (Comprehensive) تحریک کی بنیاد بھی رکھی۔</p>
+                        
+                        <h4>اہم فکری نکات:</h4>
+                        <ul>
+                            <li><i class="fas fa-book-open"></i> **تفہیم القرآن:** قرآن مجید کی جامع اور عصری تفسیر۔</li>
+                            <li><i class="fas fa-hand-holding-heart"></i> **اقامتِ دین:** زندگی کے ہر شعبے میں اللہ کے نظام کا نفاذ۔</li>
+                            <li><i class="fas fa-globe-asia"></i> **عالمی اثرات:** دنیا بھر کی اسلامی تحریکوں کے لیے رہنمائی کا ذریعہ۔</li>
+                        </ul>
+
+                        <blockquote class="quote">
+                            "یہ کوئی سیاسی جماعت نہیں بلکہ اقامتِ دین کی ایک تحریک ہے جو زندگی کے تمام پہلوؤں میں اسلامی تعلیمات کی پیروی پر زور دیتی ہے۔"
+                        </blockquote>
+                    </div>
+                </div> 
+                </div>
+        </section>
+        <style>
+            /* --- Maulana Maududi Section Styling (New and Updated) --- */
+
+.maududi-section {
+    background-color: white;
+}
+
+/* Grid layout for image and text */
+.maududi-grid {
+    display: grid;
+    /* On large screens: 1 part for image, 2 parts for text */
+    grid-template-columns: 1fr 2fr; 
+    gap: 40px;
+    align-items: start;
+    padding: 20px 0;
+}
+
+.maududi-text-content {
+    padding: 0; /* Remove padding previously applied to maududi-content */
+    border-right: none;
+}
+
+.maududi-text-content h4 {
+    color: #0A2B4C;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+.maududi-text-content ul {
+    list-style: none;
+    padding: 0;
+}
+.maududi-text-content ul li {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+.maududi-text-content ul li i {
+    color: #FFD700;
+    margin-left: 10px;
+}
+.quote {
+    background-color: #f0f4f7;
+    border-right: 4px solid #0A2B4C;
+    padding: 15px;
+    margin-top: 30px;
+    font-style: italic;
+}
+
+/* Styling for the image */
+.maududi-image {
+    text-align: center;
+    padding-top: 15px;
+}
+.maududi-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Soft rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 3px solid #FFD700; /* Gold border around the image */
+}
+
+/* --- Responsiveness for Maududi Section --- */
+@media (max-width: 992px) {
+    /* Stack the image and text vertically on tablets/mobiles */
+    .maududi-grid {
+        grid-template-columns: 1fr; 
+        gap: 30px;
+    }
+    /* Move image to the top on mobile */
+    .maududi-image {
+        order: -1; 
+    }
+}
+        </style>
+        </body>
+</html>

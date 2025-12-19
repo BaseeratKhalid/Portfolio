@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>People's Unity Party</title>
+
+<style>
+/* ============ GLOBAL STYLE ============ */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f3fdfd;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 60px 8%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 35px;
+    color: #036b70;
+    margin-bottom: 30px;
+    position: relative;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+p {
+    color: #444;
+    line-height: 1.7;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    0% {opacity: 0; transform: translateY(40px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+
+.fade {
+    animation: fadeInUp 1.2s;
+}
+
+/* ============ HEADER ============ */
+header {
+    background: linear-gradient(#0bbfc6d2, #04959cc4), url('/rough.html/alkhidmatlogo.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 60px;
+    text-shadow: 0px 3px 10px #0000007c;
+}
+
+header p {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+/* BUTTONS */
+.btn {
+    background: #04989f;
+    padding: 12px 28px;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+    margin-top: 15px;
+}
+.btn:hover {
+    background: #06666b;
+    transform: scale(1.05);
+}
+
+/* ============ WHO WE ARE ============ */
+.who div {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px #cdeeee;
+    transition: 0.4s;
+}
+.who div:hover {
+    transform: translateY(-10px);
+}
+
+/* ============ WHAT WE DO CARDS ============ */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+.card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px #cdeeee;
+    transition: 0.4s;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* ============ VOLUNTEER FORM ============ */
+form {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    width: 70%;
+    margin: auto;
+    box-shadow: 0 4px 12px #b6ebeb;
+}
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #a8e2e2;
+}
+
+/* ============ FEATURED CAUSES ============ */
+.causes img {
+    width: 100%;
+    border-radius: 12px;
+    height: 200px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+.causes img:hover {
+    transform: scale(1.05);
+}
+
+/* ============ DONATION ============ */
+.donate-box {
+    background: #e5fdfd;
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    box-shadow: 0 4px 12px #b6ebeb;
+}
+
+/* ============ FOOTER ============ */
+footer {
+    background: #036b70;
+    color: white;
+    padding: 30px 8%;
+}
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+footer li a {
+    color: #d8ffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+footer li a:hover {
+    color: white;
+}
+</style>
+</head>
+
+<body>
+ <header class="header">
+    <div class="logo">
+      <img src="/rough.html/alkhidmatlogo.jpg" alt="Logo">
+    </div>
+<!-- HEADER -->
+
+<!-- WHO WE ARE -->
+<section id="who" class="who">
+    <h2>Who We Are</h2>
+    <div class="fade">
+        <p>
+            We are a community-focused party dedicated to improving lives through
+            development, justice, equality, education, and health reforms.
+            Our mission is to empower every citizen through transparent leadership.
+        </p>
+    </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section id="do">
+    <h2>What We Do</h2>
+    <div class="cards fade">
+        <div class="card">
+            <h3>Education Programs</h3>
+            <p>Free schools, scholarships, skill development courses.</p>
+        </div>
+        <div class="card">
+            <h3>Healthcare Support</h3>
+            <p>Medical camps, free medicine, emergency treatment.</p>
+        </div>
+        <div class="card">
+            <h3>Community Development</h3>
+            <p>Clean water projects, street lights, roads and parks.</p>
+        </div>
+        <div class="card">
+            <h3>Youth Empowerment</h3>
+            <p>Training programs and motivational events.</p>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT WE HAVE DONE -->
+<section id="done">
+    <h2>What We Have Done</h2>
+    <p class="fade" style="text-align:center; width:80%; margin:auto;">
+        Successfully completed over 250+ welfare projects including schools, hospitals,
+        women empowerment programs, clean water plants, food distribution, 
+        and emergency disaster relief across Pakistan.
+    </p>
+</section>
+
+<!-- FEATURED CAUSES -->
+<section id="causes">
+    <h2>Featured Causes</h2>
+    <div class="cards causes fade">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d">
+            <h3>Clean Water Project</h3>
+            <p>Installing new filtration plants in rural areas.</p>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb">
+            <h3>Education Fund</h3>
+            <p>Supporting orphan students with full scholarships.</p>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1493836512294-502baa1986e2">
+            <h3>Health Camps</h3>
+            <p>Free checkups and treatment for needy people.</p>
+        </div>
+    </div>
+</section>
+
+<!-- VOLUNTEER -->
+<section id="volunteer">
+    <h2>Become a Volunteer</h2>
+    <form class="fade">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="text" placeholder="Phone Number" required>
+        <textarea rows="5" placeholder="Why do you want to volunteer?" required></textarea>
+        <button class="btn">Submit</button>
+    </form>
+</section>
+
+<!-- DONATION -->
+<section id="donate">
+    <h2>Donate</h2>
+    <div class="donate-box fade">
+        <p>Your donation can change someone’s life. Support our welfare projects today.</p>
+        <a href="#" class="btn">Donate Now</a>
+    </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section>
+    <h2>Join Our Newsletter</h2>
+    <form class="fade" style="width:50%;">
+        <input type="email" placeholder="Enter your email">
+        <button class="btn">Subscribe</button>
+    </form>
+</section>
+
+<!-- LOCATION MAP -->
+<section>
+    <h2>Our Location</h2>
+    <div class="fade">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.01094310701!2d67.0305!3d24.8607"
+            width="100%" height="350" style="border:0; border-radius:12px;" allowfullscreen="">
+        </iframe>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h3>Quick Links</h3>
+    <ul>
+        <li><a href="#who">Who We Are</a></li>
+        <li><a href="#do">What We Do</a></li>
+        <li><a href="#done">What We Have Done</a></li>
+        <li><a href="#volunteer">Become a Volunteer</a></li>
+        <li><a href="#causes">Featured Causes</a></li>
+        <li><a href="#donate">Donation</a></li>
+    </ul>
+    <p style="margin-top:20px;">© 2025 People's Unity Party. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

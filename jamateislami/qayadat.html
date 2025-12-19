@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مرکزی قیادت | امیر جماعت اسلامی پاکستان</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base Styles (Copied for standalone page functionality) */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
+        body {
+            direction: rtl;
+            font-family: 'Noto Nastaliq Urdu', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F8F8F8;
+            color: #333;
+            line-height: 1.8;
+        }
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        h2 { 
+            color: #0A2B4C;
+            font-size: 2.5rem;
+            text-align: center;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+        h3 { 
+            color: #0A2B4C; 
+            font-size: 1.7rem;
+            margin-top: 30px;
+            border-right: 4px solid #FFD700;
+            padding-right: 15px;
+        }
+        p {
+            font-size: 1.05rem;
+        }
+
+        /* --- New Styles for Qayadat Page Content --- */
+        .leadership-content {
+            padding-bottom: 50px;
+        }
+
+        /* Featured Leader (Amir) Section */
+        .amir-profile {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: row-reverse; /* RTL layout: image on the right */
+            gap: 30px;
+            border-right: 8px solid #0A2B4C;
+        }
+        .amir-image {
+            flex-shrink: 0; /* Prevents image from shrinking */
+            width: 200px; 
+            height: 250px;
+            overflow: hidden;
+        }
+        .amir-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid #FFD700;
+        }
+        .amir-info {
+            flex-grow: 1;
+        }
+        .amir-info h4 {
+            color: #FFD700;
+            font-size: 1.8rem;
+            margin-top: 0;
+            background-color: #0A2B4C;
+            padding: 5px 15px;
+            display: inline-block;
+            border-radius: 4px;
+        }
+        .amir-info h5 {
+            color: #0A2B4C;
+            font-size: 1.3rem;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        .amir-info ul {
+            list-style: none;
+            padding: 0;
+        }
+        .amir-info ul li {
+            margin-bottom: 8px;
+        }
+
+        /* Other Leadership/Shura Section */
+        .shura-section h4 {
+            color: #0A2B4C;
+            border-bottom: 2px dashed #FFD700;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        .shura-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .shura-list li {
+            background-color: white;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            border-right: 4px solid #FFD700;
+            font-size: 1.1rem;
+        }
+        .shura-list li span {
+            font-weight: 700;
+            display: block;
+            color: #0A2B4C;
+            margin-bottom: 5px;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .amir-profile {
+                flex-direction: column; /* Stack image and info vertically on mobile */
+                text-align: center;
+            }
+            .amir-image {
+                width: 100%;
+                height: auto;
+                max-width: 250px;
+                margin: 0 auto 20px auto;
+            }
+            .amir-image img {
+                height: auto;
+            }
+            .shura-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* --- Introduction Dropdown (Copied from previous step) --- */
+        .intro-nav-dropdown {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+        #intro-select {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 1.1rem;
+            padding: 10px 15px;
+            border: 2px solid #0A2B4C;
+            border-radius: 5px;
+            background-color: white;
+            color: #0A2B4C;
+            width: 100%;
+            max-width: 400px;
+            cursor: pointer;
+            text-align: right;
+            direction: rtl;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url('data:image/svg+xml;charset=UTF8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23FFD700" d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: left 10px center;
+        }
+        #intro-select:focus { border-color: #FFD700; outline: none; }
+        .sr-only { display: none; } 
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>مرکزی قیادت جماعت اسلامی</h2>
+        
+        <div class="intro-nav-dropdown">
+            <label for="intro-select" class="sr-only">تعارفی سیکشن منتخب کریں:</label>
+            <select id="intro-select" name="تعارفی سیکشن" onchange="window.location.href=this.value">
+                <option value="IntroductionPage.html">     قیادت  بانی   </option>
+                <option value="qayadat.html" >     مرکزی قیادت </option>   
+                
+                <option value="ManshoorPage.html"> صوبائی قیادت</option>
+                 
+            </select>
+        </div>
+        
+        <div class="leadership-content">
+            
+            <h3>امیر جماعت اسلامی پاکستان</h3>
+            <div class="amir-profile">
+                <div class="amir-image">
+                    <img src="amir-jamaat.jpg" alt="موجودہ امیر جماعت اسلامی پاکستان">
+                    
+                </div>
+                <div class="amir-info">
+                    <h4>موجودہ امیر</h4>
+                    <h5>پروفیسر محترم حافظ محمد جنید</h5>
+                    <p>
+                        پروفیسر محترم حافظ محمد جنید جماعت اسلامی پاکستان کے چھٹے منتخب امیر ہیں۔ آپ کا انتخاب سنہ 2024ء میں شورائی نظام کے ذریعے عمل میں آیا۔ آپ ایک عالم دین، ماہر تعلیم اور معروف سیاسی رہنما ہیں۔
+                    </p>
+                    <ul>
+                        <li><i class="fas fa-calendar-alt"></i> **مدتِ امارت:** 2024ء تا 2029ء</li>
+                        <li><i class="fas fa-book-reader"></i> **تخصص:** تعلیم، سیاسیات، اور امورِ شریعت</li>
+                        <li><i class="fas fa-phone-alt"></i> **رابطہ:** amir@tehreekislami.org</li>
+                    </ul>
+                    <a href="#" class="btn-link" style="color:#0A2B4C; background-color:#FFD700; padding: 8px 15px; border-radius:5px; text-decoration: none; font-weight:700;">تفصیلی سوانح حیات</a>
+                </div>
+            </div>
+
+            <div class="shura-section">
+                <h3>دیگر مرکزی عہدیداران</h3>
+                <ul class="shura-list">
+                    <li>
+                        <span>سیکرٹری جنرل:</span>
+                        جناب فضل الرحمٰن شاہ
+                    </li>
+                    <li>
+                        <span>نائب امیر اول:</span>
+                        مولانا عبدالرحیم کریمی
+                    </li>
+                    <li>
+                        <span>نائب امیر دوم:</span>
+                        ڈاکٹر ممتاز احمد خان
+                    </li>
+                    <li>
+                        <span>مرکزی ترجمان:</span>
+                        جناب عامر سہیل
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="shura-section">
+                <h3>مجلس شوریٰ (مرکزی پالیسی ساز ادارہ)</h3>
+                <p>
+                    مجلس شوریٰ جماعت اسلامی کا سب سے بڑا پالیسی ساز ادارہ ہے، جو تمام اہم فیصلوں کی منظوری دیتا ہے۔ اس کے اراکین کا انتخاب بھی جمہوری طریقے سے ہوتا ہے۔
+                    <a href="#">مکمل شوریٰ کی فہرست دیکھیں</a>
+                </p>
+            </div>
+
+        </div>
+        
+    </div>
+
+    <script>
+        document.getElementById('intro-select').onchange = function() {
+            var selectedUrl = this.value; 
+            if (selectedUrl) {
+                window.location.href = selectedUrl;
+            }
+        };
+    </script>
+
+</body>
+</html> 

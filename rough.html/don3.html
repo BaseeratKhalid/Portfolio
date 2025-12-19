@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Payment Form</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #003366; /* Deep Professional Blue */
+            --secondary: #FF8C00; /* Energetic Orange */
+            --bg-light: #f4f7f6;
+            --text-dark: #333;
+            --border-color: #ddd;
+            --light-blue: #e0e9f6;
+            --success-green: #28a745;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: var(--bg-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* --- CARD CONTAINER & ANIMATION --- */
+        .donation-card {
+            background: white;
+            width: 100%;
+            max-width: 580px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Header */
+        .card-header {
+            background: var(--primary);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            background-image: linear-gradient(135deg, var(--primary) 0%, #0056b3 100%);
+        }
+        .card-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            font-size: 1.6rem;
+        }
+        .secure-badge {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 0.8rem;
+            color: #ccc;
+        }
+        .secure-badge i { color: var(--secondary); margin-right: 5px; }
+
+        /* Body */
+        .card-body { padding: 30px; }
+        
+        /* Frequency Toggle */
+        .frequency-toggle { margin-bottom: 25px;}
+      
+
+        /* Amounts & Custom Input */
+        .amount-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .amount-btn {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .amount-btn:hover { border-color: var(--secondary); background: var(--light-blue); }
+        .amount-btn.selected {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            color: white;
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3);
+        }
+
+        .currency-symbol {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .custom-input {
+            width: 100%;
+            padding: 12px 12px 12px 45px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        /* --- INPUTS & CONTROLS --- */
+        .input-group { margin-bottom: 18px; }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        .form-control:focus { outline: none; border-color: var(--primary); }
+
+        /* Payment Method Selector */
+        .payment-methods { margin: 25px 0 20px; }
+        .payment-methods h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 15px; }
+
+        .method-item {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .method-item:has(input:checked) {
+            border-color: var(--primary);
+            background: var(--light-blue);
+            box-shadow: 0 0 5px rgba(0, 51, 102, 0.2);
+        }
+        .method-item input[type="radio"] { margin-right: 15px; accent-color: var(--secondary); }
+        .method-item i { margin-right: 10px; color: var(--primary); }
+
+        /* Payment Instructions/Details Container */
+        .payment-details-group {
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            background: #fff8f0;
+            border-radius: 5px;
+            margin-bottom: 25px;
+        }
+        .details-row { display: flex; gap: 10px; }
+        .details-row > div { flex: 1; }
+        .local-info strong { color: var(--primary); }
+
+        /* Card Icons */
+        .card-icons {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 10px;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .card-icons img { height: 20px; opacity: 0.7; }
+
+        /* Submit Button */
+        .donate-submit-btn {
+            width: 100%;
+            background: var(--secondary);
+            color: white;
+            padding: 18px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border: none;
+        }
+        .donate-submit-btn:hover { background: #e07b00; transform: translateY(-2px); }
+
+        /* Footer */
+        .footer-trust {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #999;
+        }
+        .footer-trust img { height: 20px; margin: 0 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="donation-card">
+        <div class="card-header">
+            <div class="secure-badge"><i class="fas fa-lock"></i> SSL Secured</div>
+            <h2>Support Our Cause (PKR)</h2>
+            <p>Your generous contribution helps us build a better Pakistan.</p>
+        </div>
+
+        <div class="card-body">
+            <form id="pkrdonationForm">
+                
+                <div class="frequency-toggle">
+                    <button type="button" class="freq-btn active" onclick="toggleFreq(this)">One-Time</button>
+                    <button type="button" class="freq-btn" onclick="toggleFreq(this)">Monthly Sadaqa</button>
+                </div>
+
+                <div class="amount-grid">
+                    <div class="amount-btn" onclick="selectAmount(1000)">1,000 PKR</div>
+                    <div class="amount-btn selected" onclick="selectAmount(5000)">5,000 PKR</div>
+                    <div class="amount-btn" onclick="selectAmount(10000)">10,000 PKR</div>
+                    <div class="amount-btn" onclick="selectAmount(25000)">25,000 PKR</div>
+                    <div class="amount-btn" onclick="selectAmount(50000)">50,000 PKR</div>
+                    <div class="amount-btn" onclick="selectAmount(100000)">1 Lac PKR</div>
+                </div>
+
+                <div class="custom-amount-wrapper">
+                    <span class="currency-symbol"></span>
+                    <input type="number" class="custom-input" id="customAmount" placeholder="Enter Other Amount (PKR)" onfocus="clearButtons()">
+                </div>
+<br>
+                <div class="input-group">
+                    <input type="text" class="form-control" required placeholder="Full Name">
+                </div>
+                <div class="input-group">
+                    <input type="email" class="form-control" required placeholder="Email Address">
+                </div>
+
+                <div class="payment-methods">
+                    <h3>Choose Your Method</h3>
+                    
+                    <label class="method-item">
+                        <input type="radio" name="payment_method" value="card" checked onchange="showPaymentDetails('card')">
+                        <i class="fas fa-credit-card"></i> Credit / Debit Card (Visa, Mastercard)
+                    </label>
+                    
+                    <label class="method-item">
+                        <input type="radio" name="payment_method" value="easypaisa" onchange="showPaymentDetails('easypaisa')">
+                        <i class="fas fa-mobile-alt"></i> Easypaisa / JazzCash (Mobile Wallet)
+                    </label>
+
+                    <label class="method-item">
+                        <input type="radio" name="payment_method" value="banktransfer" onchange="showPaymentDetails('banktransfer')">
+                        <i class="fas fa-university"></i> Bank Transfer (IBAN)
+                    </label>
+                </div>
+
+                <div id="paymentDetailsContainer" class="payment-details-group">
+                    
+                    <div id="cardDetailsGroup" class="details-content">
+                        <div class="card-icons">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" alt="Visa">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Mastercard-logo.svg/1200px-Mastercard-logo.svg.png" alt="Mastercard">
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="form-control" required placeholder="Card Number" maxlength="19">
+                        </div>
+                        <div class="details-row">
+                            <div class="input-group">
+                                <input type="text" class="form-control" required placeholder="MM/YY" maxlength="5">
+                            </div>
+                            <div class="input-group">
+                                <input type="text" class="form-control" required placeholder="CVC" maxlength="4">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" class="form-control" required placeholder="Card Holder Name">
+                        </div>
+                    </div>
+
+                    <div id="easypaisaInstructions" class="details-content" style="display: none;">
+                        <div class="local-info">
+                            <p>Please send your donation using your preferred mobile wallet app:</p>
+                          
+                            <p><strong>Mobile Number:</strong>0302-7893010 </p>
+                            <p class="mt-2">Note: You must complete the transaction in your app *before* submitting this form.</p>
+                        </div>
+                    </div>
+
+                    <div id="banktransferInstructions" class="details-content" style="display: none;">
+                        <div class="local-info">
+                            <p>For large transfers, please use the following bank details:</p>
+                            <p><strong>Bank:</strong> Bank Islami</p>
+                            <p><strong>Account Title:</strong>  AlKhidmat Foundation Pakistan</p>
+ <p><strong>Account Number:</strong>  205215753920001</p>
+                            <p><strong>IBAN:</strong> <strong> PK04BKIP0205215753920001</strong></p>
+                           
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="donate-submit-btn">
+                    Donate <span id="btnAmount">5,000 PKR</span> <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+            
+            <div class="footer-trust">
+                <i class="fas fa-shield-alt"></i> All card payments are processed via a secure, encrypted connection.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Core Functions ---
+        
+        // 1. Handle Amount Selection
+        function selectAmount(amount) {
+            document.querySelectorAll('.amount-btn').forEach(btn => btn.classList.remove('selected'));
+            event.target.classList.add('selected');
+            document.getElementById('customAmount').value = '';
+            updateButtonText(amount);
+        }
+
+        // 2. Handle Custom Input Focus
+        function clearButtons() {
+            document.querySelectorAll('.amount-btn').forEach(btn => btn.classList.remove('selected'));
+            updateButtonText('...');
+        }
+
+        // 3. Update Button Text dynamically
+        const customInput = document.getElementById('customAmount');
+        customInput.addEventListener('input', function(e) {
+            const val = e.target.value;
+            updateButtonText(val ? parseFloat(val) : '...');
+        });
+
+        function updateButtonText(amount) {
+            const btnText = document.getElementById('btnAmount');
+            if (amount === '...') {
+                btnText.textContent = '... PKR';
+            } else {
+                const formattedAmount = amount.toLocaleString('en-US');
+                btnText.textContent = formattedAmount + ' PKR';
+            }
+        }
+
+        // 4. Toggle Frequency
+        function toggleFreq(btn) {
+            document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        // 5. Show/Hide Payment Details (Main Logic)
+        function showPaymentDetails(method) {
+            // Hide all details groups
+            document.querySelectorAll('.details-content').forEach(el => el.style.display = 'none');
+            
+            // Show the selected details group
+            const selectedElement = document.getElementById(method + 'DetailsGroup') || 
+                                    document.getElementById(method + 'Instructions');
+            
+            if (selectedElement) {
+                selectedElement.style.display = 'block';
+            }
+        }
+        
+        // --- Initialization and Submission ---
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set initial selected amount
+            updateButtonText(5000); 
+            // The Card payment method is set as the default checked radio button, 
+            // so we ensure its fields are visible on load.
+            showPaymentDetails('card');
+        });
+        
+        // Handle Form Submit (Simulation)
+        document.getElementById('pkrdonationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let amount = document.getElementById('customAmount').value;
+            if(!amount) {
+                const selectedBtn = document.querySelector('.amount-btn.selected');
+                if(selectedBtn) amount = selectedBtn.innerText.replace(' PKR', '').replace(' Lac', '00000').replace(/,/g, '');
+            }
+
+            if(!amount || parseFloat(amount) < 1) {
+                alert("Please select or enter a valid donation amount.");
+                return;
+            }
+
+            const method = document.querySelector('input[name="payment_method"]:checked').value;
+            const btn = document.querySelector('.donate-submit-btn');
+            
+            let msg = '';
+            if (method === 'card') {
+                msg = `Thank you! Processing PKR ${parseFloat(amount).toLocaleString('en-US')} payment via Card.`;
+            } else if (method === 'easypaisa' || method === 'banktransfer') {
+                msg = `Transaction initiated. Please complete the PKR ${parseFloat(amount).toLocaleString('en-US')} payment using the displayed ${method} details.`;
+            } else {
+                msg = `Donation submitted successfully.`;
+            }
+
+            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Processing...';
+            
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Transaction Complete!';
+                btn.style.background = var_success_green; 
+                alert(msg);
+                
+                // Reset after a few seconds
+                setTimeout(() => {
+                    btn.style.background = var_secondary;
+                    btn.innerHTML = `Donate ${document.getElementById('btnAmount').textContent} <i class="fas fa-arrow-right"></i>`;
+                }, 3000);
+            }, 1500);
+        });
+        
+    </script>
+</body>
+</html>

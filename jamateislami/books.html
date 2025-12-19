@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>کتب و مطبوعات | جماعت اسلامی</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base Styles (Copied for standalone page functionality) */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
+        body {
+            direction: rtl;
+            font-family: 'Noto Nastaliq Urdu', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F8F8F8;
+            color: #333;
+            line-height: 1.8;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        h2 { 
+            color: #0A2B4C;
+            font-size: 2.5rem;
+            text-align: center;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+        
+        /* --- Styles for Book Cards Grid --- */
+        .books-grid {
+            display: grid;
+            /* 4 columns on large screens */
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 30px;
+            padding-bottom: 50px;
+        }
+
+        .book-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden; 
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            border-top: 5px solid #0A2B4C; 
+            text-align: center;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .book-image {
+            width: 100%;
+            height: 300px; /* Fixed height for book cover */
+            overflow: hidden;
+            border-bottom: 1px solid #eee;
+            padding: 15px;
+            background-color: #f9f9f9;
+        }
+
+        .book-image img {
+            max-height: 100%;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.5s;
+        }
+        
+        .book-card:hover .book-image img {
+             transform: scale(1.05); /* Slight zoom on hover */
+        }
+
+        .book-content {
+            padding: 15px 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .book-content h4 {
+            color: #0A2B4C;
+            font-size: 1.25rem;
+            margin-top: 0;
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        .book-meta {
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 15px;
+        }
+        .book-meta span {
+            font-weight: 700;
+            color: #FFD700;
+        }
+        
+        .book-actions {
+            margin-top: auto; /* Push actions to the bottom */
+            display: flex;
+            justify-content: space-around;
+            padding-top: 15px;
+            border-top: 1px dotted #eee;
+        }
+
+        .btn-action {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .btn-download {
+            background-color: #0A2B4C;
+            color: white;
+        }
+        .btn-download:hover {
+            background-color: #FFD700;
+            color: #0A2B4C;
+        }
+        
+        .btn-read {
+            background-color: #FFD700;
+            color: #0A2B4C;
+        }
+        .btn-read:hover {
+            background-color: #e0b000;
+        }
+  .pagination {
+            display: flex;
+            justify-content: center;
+            padding: 30px 0;
+        }
+        .pagination a {
+            color: #0A2B4C;
+            padding: 10px 15px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-weight: 700;
+        }
+        .pagination a:hover, .pagination a.active {
+            background-color: #FFD700;
+            color: #0A2B4C;
+            border-color: #FFD700;
+        }
+        .pagination a.current-page {
+             background-color: #0A2B4C;
+             color: white;
+             border-color: #0A2B4C;
+        }
+        .intro-nav-dropdown {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+        #intro-select {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 1.1rem;
+            padding: 10px 15px;
+            border: 2px solid #0A2B4C;
+            border-radius: 5px;
+            background-color: white;
+            color: #0A2B4C;
+            width: 100%;
+            max-width: 400px;
+            cursor: pointer;
+            text-align: right;
+            direction: rtl;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url('data:image/svg+xml;charset=UTF8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23FFD700" d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: left 10px center;
+        }
+        #intro-select:focus { border-color: #FFD700; outline: none; }
+        .sr-only { display: none; } 
+
+    </style>
+    </style>
+</head>
+<body>
+     
+        
+        <div class="intro-nav-dropdown">
+            <label for="intro-select" class="sr-only">تعارفی سیکشن منتخب کریں:</label>
+            <select id="intro-select" name="تعارفی سیکشن" onchange="window.location.href=this.value">
+               
+                <option value="books.html" selected> کتب</option> 
+                   <option value="iqtasab.html">     اقتباسات   </option>
+                <option value="personality.html">  مشہور شخصیات </option>
+                <option value="problems.html">      رسائل و مسائل  </option>
+                  <option value="syllabus.html">   سالانہ نصاب مطالعہ   </option>
+                
+
+            </select>
+        </div>
+
+    <div class="container">
+        <h2>کتب و مطبوعات</h2>
+        
+        <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem;">
+            یہاں جماعت اسلامی اور بانی تحریک سید ابوالاعلیٰ مودودیؒ کی تمام اہم مطبوعات اور تحقیقی کتب آن لائن دستیاب ہیں۔
+        </p>
+        
+        <div class="books-grid">
+            
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="book-tafheem.jpg" alt="تفہیم القرآن کا کور">
+                </div>
+                <div class="book-content">
+                    <h4>تفہیم القرآن (مکمل)</h4>
+                    <div class="book-meta">مصنف: <span>سید ابوالاعلیٰ مودودیؒ</span></div>
+                    <div class="book-actions">
+                        <a href="#" class="btn-action btn-download"><i class="fas fa-download"></i> ڈاؤن لوڈ (PDF)</a>
+                        <a href="#" class="btn-action btn-read"><i class="fas fa-book-open"></i> آن لائن پڑھیں</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="book-islamic-state.jpg" alt="اسلامی ریاست کا کور">
+                </div>
+                <div class="book-content">
+                    <h4>اسلامی ریاست</h4>
+                    <div class="book-meta">مصنف: <span>سید ابوالاعلیٰ مودودیؒ</span></div>
+                    <div class="book-actions">
+                        <a href="#" class="btn-action btn-download"><i class="fas fa-download"></i> ڈاؤن لوڈ (PDF)</a>
+                        <a href="#" class="btn-action btn-read"><i class="fas fa-book-open"></i> آن لائن پڑھیں</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="book-huqooq.jpg" alt="حقوق الزوجین کا کور">
+                </div>
+                <div class="book-content">
+                    <h4>حقوق الزوجین</h4>
+                    <div class="book-meta">مصنف: <span>سید ابوالاعلیٰ مودودیؒ</span></div>
+                    <div class="book-actions">
+                        <a href="#" class="btn-action btn-download"><i class="fas fa-download"></i> ڈاؤن لوڈ (PDF)</a>
+                        <a href="#" class="btn-action btn-read"><i class="fas fa-book-open"></i> آن لائن پڑھیں</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <div class="book-image">
+                    <img src="book-tehreek-akhlaq.jpg" alt="اخلاقی بنیادیں کور">
+                </div>
+                <div class="book-content">
+                    <h4>تحریک اسلامی کی اخلاقی بنیادیں</h4>
+                    <div class="book-meta">مصنف: <span>پروفیسر خورشید احمد</span></div>
+                    <div class="book-actions">
+                        <a href="#" class="btn-action btn-download"><i class="fas fa-download"></i> ڈاؤن لوڈ (PDF)</a>
+                        <a href="#" class="btn-action btn-read"><i class="fas fa-book-open"></i> آن لائن پڑھیں</a>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+        
+        <div class="pagination">
+            <a href="#" class="current-page">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">اگلا</a>
+            <a href="#">آخری</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

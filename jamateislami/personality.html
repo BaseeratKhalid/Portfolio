@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شخصیات | اہم قائدین و رہنما</title>
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Base Styles (Copied for standalone page functionality) */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
+        body {
+            direction: rtl;
+            font-family: 'Noto Nastaliq Urdu', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F8F8F8;
+            color: #333;
+            line-height: 1.8;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        h2 { 
+            color: #0A2B4C;
+            font-size: 2.5rem;
+            text-align: center;
+            border-bottom: 3px solid #FFD700;
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+            margin-top: 40px;
+        }
+        h3 { 
+            color: #0A2B4C; 
+            font-size: 1.7rem;
+            margin-top: 30px;
+            border-right: 4px solid #FFD700;
+            padding-right: 15px;
+            margin-bottom: 20px;
+        }
+        
+        /* --- Styles for Personalities Grid --- */
+        .personalities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px;
+            padding-bottom: 50px;
+            text-align: center;
+        }
+
+        .person-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden; 
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .person-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .person-image {
+            width: 100%;
+            height: 300px; /* Uniform height for portraits */
+            overflow: hidden;
+        }
+
+        .person-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-bottom: 5px solid #FFD700;
+        }
+
+        .person-content {
+            padding: 15px 20px 25px;
+            flex-grow: 1;
+        }
+
+        .person-content h4 {
+            color: #0A2B4C;
+            font-size: 1.5rem;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+        
+        .person-role {
+            font-size: 0.95rem;
+            color: #777;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .person-summary {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 15px;
+            min-height: 45px;
+        }
+
+        .btn-bio {
+            display: inline-block;
+            background-color: #0A2B4C;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+        .btn-bio:hover {
+            background-color: #FFD700;
+            color: #0A2B4C;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>جماعت اسلامی کی اہم شخصیات</h2>
+        
+        <p style="text-align: center; margin-bottom: 40px;">
+            جماعت کے بانی، سابق امراء، اور ان فکری رہنماؤں کا تعارف جنہوں نے تحریک اسلامی کی تعمیر میں بنیادی کردار ادا کیا۔
+        </p>
+        
+        <h3>بانی تحریک</h3>
+        <div class="personalities-grid" style="grid-template-columns: 1fr;">
+            
+            <div class="person-card" style="max-width: 500px; margin: 0 auto; flex-direction: row-reverse; text-align: right;">
+                <div class="person-image" style="width: 200px; height: auto;">
+                    <img src="person-maududi.jpg" alt="سید ابوالاعلیٰ مودودیؒ">
+                </div>
+                <div class="person-content" style="padding-top: 30px;">
+                    <h4>سید ابوالاعلیٰ مودودیؒ</h4>
+                    <div class="person-role" style="color: #0A2B4C; font-size: 1.1rem;">بانی جماعت اسلامی (1941ء - 1972ء)</div>
+                    <p class="person-summary" style="min-height: auto;">
+                        اسلام کے ایک عظیم مفکر، مفسر، فلسفی اور صحافی۔ آپ نے 20 ویں صدی میں اسلامی احیاء کی تحریک میں کلیدی کردار ادا کیا اور برصغیر میں اسلامی تحریک کی نظریاتی اساس فراہم کی۔
+                    </p>
+                    <a href="#" class="btn-bio">مکمل سوانح</a>
+                </div>
+            </div>
+        </div>
+
+        <h3>سابق امراء جماعت اسلامی پاکستان</h3>
+        <div class="personalities-grid">
+            
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="person-tufail.jpg" alt="میاں طفیل محمدؒ">
+                </div>
+                <div class="person-content">
+                    <h4>میاں طفیل محمدؒ</h4>
+                    <div class="person-role">امیر جماعت (1972ء - 1987ء)</div>
+                    <p class="person-summary">
+                        اپنے دور میں مشکل سیاسی حالات کا سامنا کیا اور جماعت کی تنظیمی جڑوں کو مزید مضبوط کیا۔
+                    </p>
+                    <a href="#" class="btn-bio">سوانح حیات</a>
+                </div>
+            </div>
+            
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="person-qazi.jpg" alt="قاضی حسین احمدؒ">
+                </div>
+                <div class="person-content">
+                    <h4>قاضی حسین احمدؒ</h4>
+                    <div class="person-role">امیر جماعت (1987ء - 2009ء)</div>
+                    <p class="person-summary">
+                        ایک متحرک سیاسی رہنما جنہوں نے جماعت کو ایک عوامی تحریک میں بدل دیا اور عالم اسلام میں اپنا منفرد مقام بنایا۔
+                    </p>
+                    <a href="#" class="btn-bio">سوانح حیات</a>
+                </div>
+            </div>
+            
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="person-munawar.jpg" alt="سید منور حسنؒ">
+                </div>
+                <div class="person-content">
+                    <h4>سید منور حسنؒ</h4>
+                    <div class="person-role">امیر جماعت (2009ء - 2014ء)</div>
+                    <p class="person-summary">
+                        اخلاص اور دیانت کی علامت، جن کی تقاریر میں اخلاقی اور فکری گہرائی پائی جاتی تھی۔
+                    </p>
+                    <a href="#" class="btn-bio">سوانح حیات</a>
+                </div>
+            </div>
+
+            <div class="person-card">
+                <div class="person-image">
+                    <img src="person-siraj.jpg" alt="سراج الحق">
+                </div>
+                <div class="person-content">
+                    <h4>سراج الحق</h4>
+                    <div class="person-role">امیر جماعت (2014ء - 2024ء)</div>
+                    <p class="person-summary">
+                        عوامی رابطہ اور احتجاجی سیاست کے ذریعے کرپشن کے خلاف بھرپور مہمات چلائیں۔
+                    </p>
+                    <a href="#" class="btn-bio">سوانح حیات</a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <h3>دیگر نمایاں فکری شخصیات</h3>
+        <div class="personalities-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+             <div class="person-card">
+                <div class="person-image" style="height: 200px;">
+                    <img src="person-khurshid.jpg" alt="پروفیسر خورشید احمد">
+                </div>
+                <div class="person-content">
+                    <h4>پروفیسر خورشید احمد</h4>
+                    <div class="person-role">معیشت دان، سینئر نائب امیر</div>
+                    <a href="#" class="btn-bio">سوانح حیات</a>
+                </div>
+            </div>
+            
+             <div class="person-card">
+                <div class="person-image" style="height: 200px;">
+                    <img src="person-karimi.jpg" alt="مولانا عبدالرحیم کریمی">
+                </div>
+                <div class="person-content">
+                    <h4>مولانا عبدالرحیم کریمی</h4>
+                    <div class="person-role">نائب امیر، عالم دین</div>
+                    <a href="#" class="btn-bio">سوانح حیات</a>
+                </div>
+            </div>
+            
+            <div class="person-card">
+                <div class="person-image" style="height: 200px;">
+                    <img src="person-paracha.jpg" alt="ڈاکٹر فرید پراچہ">
+                </div>
+                <div class="person-content">
+                    <h4>ڈاکٹر فرید پراچہ</h4>
+                    <div class="person-role">سیاسی رہنما، مفکر</div>
+                    <a href="#" class="btn-bio">سوانح حیات</a>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+</body>
+</html>

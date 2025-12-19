@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The People's Voice | Together For Change</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary: #003366; /* Deep Professional Blue */
+            --secondary: #FF8C00; /* Energetic Orange */
+            --accent: #f4f4f4;
+            --text-dark: #333;
+            --text-light: #fff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+       body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;      
+
+
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- BUTTONS --- */
+        .btn {
+           
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--text-light);
+        }
+
+        .btn-primary:hover {
+            background: #e07b00;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 140, 0, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--text-light);
+            color: var(--text-light);
+            margin-left: 10px;
+        }
+
+        .btn-outline:hover {
+            background: var(--text-light);
+            color: var(--primary);
+        }
+
+        /** {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: #1f476e;
+}
+
+.logo img {
+  height: 60px;
+  
+}
+ --- HEADER & NAV --- */
+        header {
+            
+
+            background: var(--primary);
+            color: var(--text-light);
+            padding: 2rem 5%;
+            position: static;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(59, 110, 222, 0.877);
+
+        }
+
+        nav {
+            display: flex;
+            color: white; 
+            margin-left: 25px;
+            justify-content: space-between;
+            align-items: center;
+        }
+   
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+           color:var(--accent);
+    font-style:italic;
+        }
+
+        .logo i { color: var(--secondary); }
+
+        .nav-links {
+            color: white; 
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--secondary); }
+
+        .donate-btn-nav {
+            background: var(--secondary);
+            padding: 8px 20px;
+            border-radius: 20px;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.7)), 
+                        url('https://pakobserver.net/wp-content/uploads/2023/08/Alkhidmat_Foundation_Pakistan-copy.webp');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            
+            color: var(--text-light);
+            padding: 0 20px;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        /* --- SECTION GENERIC --- */
+        .section-padding {
+            padding: 80px 10%;
+        }
+        
+
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title .line {
+            width: 80px;
+            height: 10px;
+            background: var(--secondary);
+            margin: 0 auto;
+        }
+
+        /* --- WHO WE ARE (ABOUT) --- */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-text h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        /* --- WHAT WE DO (SERVICES) --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+             
+  
+        }
+
+        .service-card {
+             
+            background: white;
+
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom: 4px solid var(--secondary);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        /* --- WHAT DONE (ACHIEVEMENTS) --- */
+        .achievements {
+            background: var(--primary);
+            color: var(--text-light);
+            text-align: center;
+             padding: 40px 20px;
+            
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 80px;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            color: var(--secondary);
+        }
+
+        /* --- FEATURED CAUSES --- */
+        .causes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .cause-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .cause-img {
+            height: 200px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .cause-content {
+            padding: 25px;
+        }
+
+        .progress-bar {
+            background: #eee;
+            height: 10px;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: var(--secondary);
+            height: 100%;
+        }
+
+        .fund-details {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* --- VOLUNTEER FORM --- */
+        .volunteer-section {
+            background: var(--accent);
+        }
+
+        .volunteer-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        /* --- NEWSLETTER --- */
+        .newsletter {
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .newsletter-input {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .newsletter input {
+            padding: 15px;
+            width: 300px;
+            border: none;
+            border-radius: 30px;
+        }
+
+        .newsletter button {
+            background: var(--primary);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* --- LOCATION & CONTACT --- */
+        .location-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .map-frame iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: 0;
+        }
+
+        .contact-info {
+            background: var(--primary);
+            color: white;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--secondary);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 60px 10% 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--secondary);
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #333;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .about-container { grid-template-columns: 1fr; }
+            .nav-links { display: none; } /* Simplified for demo */
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .location-container { grid-template-columns: 1fr; }
+        }
+  
+        .view-more-btn {
+  display: inline-block;
+  
+  padding: 12px 32px;
+  background-color: #1e88e5;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s ease;
+
+}
+
+.view-more-btn:hover {
+  background-color: #edb124;
+  transform: scale(1.05);
+}
+
+    </style>
+</head>
+<body>
+
+   
+         <header class="header">
+    <div class="logo">
+      <img src="/alkhidmat/images/alkhidmatlogo.jpg"  alt="Logo"  > ALKHIDMAT FOUNDATION PAKISTAN
+    </div>
+             <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Who We Are</a></li>
+                <li><a href="#services">What We Do</a></li>
+                <li><a href="#causes">Causes</a></li>
+                <li><a href="#volunteer">Join Us</a></li>
+                <li><a href="/alkhidmat/don.html" class="donate-btn-nav">Donate</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1 data-aos="fade-up">Building a Better Future<br>For Everyone</h1>
+        <p data-aos="fade-up" data-aos-delay="200">We are committed to justice, equality, and progress. Join the movement that puts people first.</p>
+        <div data-aos="fade-up" data-aos-delay="400">
+            <a href="#volunteer" class="btn btn-primary">Become a Volunteer</a>
+            <a href="#about" class="btn btn-outline">Learn More</a>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="about-container">
+            <div class="about-img" data-aos="fade-right">
+                <img src="https://alkhidmat.com/wp-content/uploads/2023/06/01.jpg" alt="Team Meeting">
+            </div>
+            <div class="about-text" data-aos="fade-left">
+                <div class="section-title" style="text-align: left;">
+                    <h2>Who We Are</h2>
+                    <div class="line" style="margin: 0;"></div>
+                </div>
+                <br>
+                <h3>Dedicated to Public Service</h3>
+                <p>The JAMAT-E-ISLAMI is more than a political party; we are a community movement. Founded on the principles of transparency and empathy, we strive to bridge the gap between the government and the common citizen.</p>
+                <br>
+                <ul class="fa-ul" style="margin-left: 20px;">
+                    <li><span class="fa-li"><i class="fas fa-check" style="color:var(--secondary)"></i></span>Advocating for Human Rights</li>
+                    <li><span class="fa-li"><i class="fas fa-check" style="color:var(--secondary)"></i></span>Economic Sustainability</li>
+                    <li><span class="fa-li"><i class="fas fa-check" style="color:var(--secondary)"></i></span>Youth Empowerment</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding" style="background: var(--accent);">
+        <div class="section-title" data-aos="fade-up">
+            <h2>What We Do</h2>
+            <div class="line"></div>
+            <p style="margin-top:10px;">Our core pillars of action for the community.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card" data-aos="flip-left" data-aos-delay="100">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Education Reform</h3>
+                <p>Ensuring every child has access to quality schooling and modern resources.</p>
+           <br>
+                <a href="#" class="view-more-btn">View More</a>
+            </div>
+           
+            <div class="service-card" data-aos="flip-left" data-aos-delay="100">
+                <i class="fas fa-heartbeat"></i>
+                <h3>Healthcare Access</h3>
+                <p>Providing free medical camps and fighting for affordable healthcare policies.</p>
+            
+            <br>
+                <a href="#" class="view-more-btn">View More</a>
+            
+            </div>
+            <div class="service-card" data-aos="flip-left" data-aos-delay="200">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Disaster Managment</h3>
+                <p>Support programs for the elderly, unemployed, and underprivileged families.</p>
+          
+           <br>
+                <a href="#" class="view-more-btn">View More</a>
+          
+            </div> 
+            <div class="service-card" data-aos="flip-left" data-aos-delay="300">
+                <i class="fas fa-tree"></i>
+                <h3>Wash</h3>
+                <p>Leading tree plantation drives and clean city initiatives.</p>
+      <br>
+                <a href="#" class="view-more-btn">View More</a>     
+          
+            </div>
+              <div class="service-card" data-aos="flip-left" data-aos-delay="100">
+                <i class="fa fa-heart"></i>
+                <h3>Orphan Care Program</h3>
+                <p>Providing free medical camps and fighting for affordable healthcare policies.</p>
+     <br>
+                <a href="#" class="view-more-btn">View More</a>        
+            
+            </div>
+              <div class="service-card" data-aos="flip-left" data-aos-delay="100">
+                <i class="fa fa-building"></i>
+                <h3>Agosh Homes</h3>
+                <p>Providing free medical camps and fighting for affordable healthcare policies.</p>
+          
+               <br>
+                <a href="#" class="view-more-btn">View More</a>  
+            </div>
+             <div class="service-card" data-aos="flip-left" data-aos-delay="100">
+                <i class="fa fa-university"></i>
+                <h3>Islamic Finance</h3>
+                <p>Providing free medical camps and fighting for affordable healthcare policies.</p>
+          <br>
+                <a href="#" class="view-more-btn">View More</a>
+            
+            </div>
+             <div class="service-card" data-aos="flip-left" data-aos-delay="100">
+                <i class="fa fa-balance-scale"></i>
+                <h3>Community Services</h3>
+                <p>Providing free medical camps and fighting for affordable healthcare policies.</p>
+            <br>
+                <a href="#" class="view-more-btn">View More</a>
+            
+            </div>
+             <div class="service-card" data-aos="flip-left" data-aos-delay="200">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Brotherhood</h3>
+                <p>Support programs for the elderly, unemployed, and underprivileged families.</p>
+          
+           <br>
+                <a href="#" class="view-more-btn">View More</a>
+          
+            </div>
+             
+        </div>
+    </section>
+
+    <section class="section-padding achievements">
+        <div class="section-title">
+            <h2 style="color:white;">Our Impact</h2>
+            <div class="line" style="background: white;"></div>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                 
+                <h3>
+22,540,000</h3>
+                <p>Lives Impacted</p>
+                
+            </div>
+         
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+                <h3>
+69,706</h3>
+                <p>Active Volunteers</p>
+            </div>
+             <div class="stats-grid">
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                <div class="stats-grid">
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                 
+                <h3>
+704,000,000</h3>
+                <p>Loan Portfolio (PKR)</p>
+                
+            </div>  
+            
+              <div class="stats-grid">
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                 
+                <h3>
+
+28,796</h3>
+                <p>Water Projects</p>
+                
+            </div>
+            
+                
+            
+
+    
+            
+        </div>
+    </section>
+
+    <section id="causes" class="section-padding">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Featured Causes</h2>
+            <div class="line"></div>
+            <p style="margin-top:10px;">Your donations bring real change. Support our active campaigns.</p>
+        </div>
+
+        <div class="causes-grid">
+            <div class="cause-card" data-aos="fade-up">
+                <div class="cause-img" style="background-image: url('https://s.yimg.com/ny/api/res/1.2/cmuRmTufoHDV3oMlfT2.PA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTY0MA--/https://media.zenfs.com/en/ap.org/831fbc3e28606007dcf55ab3cee1abe0');"></div>
+                <div class="cause-content">
+                    <h3>REBUILD GAZA</h3>
+                    <p> The most beloved deeds to Allah are those done regularly, even if small. (Bukhari, 6465)</p>
+                  <br>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 55%;"></div>
+                    </div>
+                    <div class="fund-details">
+                         
+                       
+                    </div>
+                    <button class="btn btn-primary" style="width:100%">Donate Now</button>
+                </div>
+            </div>
+
+            <div class="cause-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="cause-img" style="background-image: url('https://www.vaticannews.va/content/dam/vaticannews/agenzie/images/afp/2023/05/13/11/1683970175356.jpg/_jcr_content/renditions/cq5dam.thumbnail.cropped.1500.844.jpeg');"></div>
+                <div class="cause-content">
+                    <h3>SADQA FOR GAZA</h3>
+                    <p>“Whatever you spend in Sadaqah, Allah will replace it; and He is the Best of Providers.” Surah Saba (34:39)</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 45%;"></div>
+                    </div>
+                    <div class="fund-details">
+
+                
+                    </div>
+                    <button class="btn btn-primary" style="width:100%">Donate Now</button>
+                </div>
+            </div>
+
+            <div class="cause-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="cause-img" style="background-image: url('https://idsb.tmgrup.com.tr/ly/uploads/images/2024/02/20/315766.jpg');"></div>
+                <div class="cause-content">
+                    <h3>ZAKAT FOR GAZA</h3>
+                    <p>“Zakat is for the poor, the needy, those in debt, and in the cause of Allah.” Surah At-Tawbah (9:60)</p>
+                  <br>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 30%;"></div>
+                    </div>
+                    <div class="fund-details">
+                  
+                   
+                    </div>
+                    <button class="btn btn-primary" style="width:100%">Donate Now</button>
+                </div>
+            </div>
+         
+            
+    </section>
+
+    <section id="volunteer" class="section-padding volunteer-section">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Become a Volunteer</h2>
+            <div class="line"></div>
+            <p style="margin-top:10px;">Join our team on the ground and make a difference.</p>
+        </div>
+
+        <div class="volunteer-container" data-aos="zoom-in">
+            <form>
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="tel" placeholder="Phone Number">
+                <select>
+                    <option>Select Area of Interest</option>
+                    <option>Disaster Management</option>
+                    <option>Health</option>
+                    <option>Education</option>
+                    <option>Orphan Care Program</option>
+                     <option>Aghosh Homes</option>
+                         <option>Islamic Microfinance</option>
+                             <option>Community Services</option>
+                </select>
+                <textarea rows="4" placeholder="Why do you want to join us?"></textarea>
+                <button type="submit" class="btn btn-primary" style="width:100%">Submit Application</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <h2 data-aos="fade-down">Subscribe to Our Newsletter</h2>
+        <p>Stay updated with our latest news, events, and policy updates.</p>
+        <div class="newsletter-input" data-aos="fade-up">
+            <input type="email" placeholder="Enter your email address">
+            <button>Subscribe</button>
+        </div>
+    </section>
+
+    <section class="location-container">
+        <div class="contact-info">
+            <h2>Visit Our Headquarters</h2>
+            <br>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span> Near AL-Khidmat Jamia Fareedia Road, Sahiwal, 57000, Pakistan</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+92 317 0731646</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>info@peoplesvoice.org</span>
+            </div>
+        </div>
+        <div class="map-frame">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3431.680308252081!2d73.11496757426269!3d30.67112958860964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3922b70c9fce4295%3A0xaf9966a0f208e904!2sAlKhidmat%20Hospital%20Sahiwal!5e0!3m2!1sen!2s!4v1765724678458!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+               
+                    <div class="logo">
+      <img src="/alkhidmat/images/alkhidmatlogo.jpg"  alt="Logo"> 
+    </div>
+                   
+                <br>
+                <p>Working tirelessly for the rights and prosperity of every citizen. Together, we build the future.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#causes">Donate</a></li>
+                    <li><a href="#volunteer">Volunteer</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Latest News</h4>
+                <ul>
+                    <li><a href="#">Election Updates</a></li>
+                    <li><a href="#">Press Releases</a></li>
+                    <li><a href="#">Event Calendar</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 The People's Voice. All Rights Reserved. Built for the People.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Animations
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+
+        // Simple Form Alert
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! Your application has been received. We will contact you soon.');
+        });
+        
+        // Donation Button Alert
+        const donateBtns = document.querySelectorAll('.btn-primary');
+        donateBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                if(this.textContent === 'Donate Now') {
+                    alert('Thank you for your interest in donating! This would redirect to a payment gateway.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

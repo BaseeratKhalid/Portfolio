@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Featured Causes - Animated</title>
+    <link rel="stylesheet" href="causes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Our **Featured** Causes</h1>
+        <p>Join us in supporting global initiatives that bring meaningful change and sustainable impact to communities worldwide.</p>
+    </header>
+
+    <main class="causes-container">
+        
+        <section class="cause-item right-animation" data-animation-target>
+            <div class="cause-content">
+                <h2>📚 Global Education Access</h2>
+                <p>Funding scholarships and building safe learning environments for children in underserved regions, ensuring no potential is lost.</p>
+                <a href="#" class="btn-donate">Support Now</a>
+            </div>
+            <div class="cause-image" style="background-image: url('https://picsum.photos/id/101/400/300');"></div>
+        </section>
+
+        <section class="cause-item left-animation" data-animation-target>
+            <div class="cause-image" style="background-image: url('https://picsum.photos/id/1068/400/300');"></div>
+            <div class="cause-content">
+                <h2>🌳 Sustainable Environment</h2>
+                <p>Working to combat climate change through reforestation projects and promoting clean energy adoption across major cities.</p>
+                <a href="#" class="btn-donate">Contribute</a>
+            </div>
+        </section>
+
+        <section class="cause-item right-animation" data-animation-target>
+            <div class="cause-content">
+                <h2>🏥 Critical Healthcare Outreach</h2>
+                <p>Delivering essential medical supplies and launching mobile clinics to remote areas lacking fundamental healthcare facilities.</p>
+                <a href="#" class="btn-donate">Learn More</a>
+            </div>
+            <div class="cause-image" style="background-image: url('https://picsum.photos/id/175/400/300');"></div>
+        </section>
+
+    </main>
+
+    <script src="causes.js"></script>
+    <style>
+        /* --- Color Palette --- */
+:root {
+    --dark-blue: #1A237E;
+    --vibrant-orange: #FF6E40;
+    --light-bg: #F5F5F5; /* Slightly lighter than previous for causes page */
+    --text-white: #FFFFFF;
+}
+
+/* --- Base & Typography --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--dark-blue);
+    line-height: 1.6;
+}
+
+h1, h2 {
+    font-weight: 700;
+}
+
+/* --- Header Styling (Hero Section) --- */
+.hero {
+    background-color: var(--dark-blue);
+    color: var(--text-white);
+    padding: 80px 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero h1 **strong** { /* Highlight 'Featured' in Orange */
+    color: var(--vibrant-orange);
+}
+
+.hero p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- Causes Container --- */
+.causes-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Cause Item Styling --- */
+.cause-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 80px; /* Space between sections */
+    background-color: var(--text-white);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* Important for image rounding */
+    min-height: 300px;
+}
+
+.cause-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.cause-content h2 {
+    color: var(--vibrant-orange);
+    font-size: 2em;
+    margin-top: 0;
+}
+
+/* Image Styling */
+.cause-image {
+    width: 40%; /* Image takes up 40% of the section */
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.cause-item:hover .cause-image {
+    transform: scale(1.05); /* Zoom effect on image hover */
+}
+
+/* Donation Button */
+.btn-donate {
+    display: inline-block;
+    padding: 10px 25px;
+    margin-top: 20px;
+    background-color: var(--vibrant-orange);
+    color: var(--text-white);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-donate:hover {
+    background-color: #e65100; /* Darker orange on hover */
+    transform: translateY(-2px);
+}
+
+
+/* --- Animation Classes (Initial State) --- */
+
+/* Base hidden state for all animated items */
+[data-animation-target] {
+    opacity: 0;
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Animation for items starting from the right (image on left) */
+.right-animation {
+    transform: translateX(100px) rotate(3deg); /* Starts rotated and offset to the right */
+}
+
+/* Animation for items starting from the left (image on right) */
+.left-animation {
+    transform: translateX(-100px) rotate(-3deg); /* Starts rotated and offset to the left */
+}
+
+/* --- Animation Classes (Final/Active State) --- */
+
+/* Final state applied by JavaScript */
+[data-animation-target].is-visible {
+    opacity: 1;
+    transform: translateX(0) rotate(0); /* Final, normal position */
+}
+
+
+/* --- Responsive Design: Stacking on Mobile --- */
+@media (max-width: 900px) {
+    .cause-item {
+        flex-direction: column; /* Stack image and content */
+        text-align: center;
+    }
+
+    /* Reverse the order for the alternating causes to keep image on top consistently */
+    .left-animation {
+        flex-direction: column-reverse;
+    }
+
+    .cause-image {
+        width: 100%;
+        height: 250px;
+    }
+
+    .cause-content {
+        padding: 20px;
+    }
+
+    /* Reset initial animation state for stacking elements to look better */
+    .right-animation, .left-animation {
+        transform: translateY(50px);
+    }
+    
+    /* Ensure only the is-visible animation is active */
+    [data-animation-target].is-visible {
+        transform: translateY(0) rotate(0);
+    }
+}
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Select all cause sections marked for animation
+    const targets = document.querySelectorAll('[data-animation-target]');
+
+    // Configuration for the Intersection Observer
+    const options = {
+        root: null, // Use the viewport
+        rootMargin: '0px',
+        threshold: 0.2 // Trigger when 20% of the element is visible
+    };
+
+    // The function that runs when an element intersects the viewport
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            // Check if the target is currently intersecting (in view)
+            if (entry.isIntersecting) {
+                // Add the 'is-visible' class to trigger the sophisticated CSS animation
+                entry.target.classList.add('is-visible');
+                // Stop observing the element once it has animated
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    // Create the Intersection Observer instance
+    const observer = new IntersectionObserver(observerCallback, options);
+
+    // Start observing each target element
+    targets.forEach(target => {
+        observer.observe(target);
+    });
+});
+    </script>
+</body>
+</html>

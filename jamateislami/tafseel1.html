@@ -95,9 +95,197 @@
             .content-section { padding: 20px; }
             .name-title h1 { font-size: 26px; }
         }
+                 .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background:  #0A2B4C;
+    color: white;
+    backdrop-filter: blur(10px); /* Beautiful blur effect */
+    border-bottom: 2px solid #008000; /* Jamaat-e-Islami Green */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+}
+
+.main-header a {
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.main-header a:hover {
+    color: #008000;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo i {
+    font-size: 2rem;
+     color: #FFD700; /* Gold */
+    margin-left: 10px;
+}
+.logo img {
+  height: 80px;    /* Control the height of your logo */
+  width: 20;     /* Maintains aspect ratio */
+  display: block;
+ 
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+nav ul li a:hover {
+    background-color: #FFD700; /* Gold on hover */
+    color: #0A2B4C; /* Deep Blue text */
+}
+
+/* Mobile Navigation Toggle */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Footer Base Styles */
+.main-footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 40px 0 20px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl; /* Sets text direction to Right-to-Left */
+    text-align: right;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+
+/* Headings (Yellow Color) */
+.footer-column h3 {
+    color: #ffcc00;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* Contact & Link Styles */
+.footer-column p, .footer-column ul {
+    list-style: none;
+    padding: 0;
+    line-height: 1.8;
+}
+
+.footer-column a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: #ffcc00;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 1.5rem;
+}
+
+.social-icons a {
+    color: #ffcc00;
+}
+
+/* Bottom Copyright Bar */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    margin-top: 20px;
+    padding-top: 20px;
+    font-size: 0.9rem;
+    color: #bbbbbb;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-column h3 {
+        display: block;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+
+   
     </style>
 </head>
 <body>
+    <header class="main-header">
+    
+     <div class="logo">
+            
+        <img src="/jamateislami/images/jamaat_islami_harm_logo1-removebg-preview.png" >
+  
+           
+                 <span> جماعتِ اسلامی پاکستان</span> 
+               
+            </div>
+    <nav>
+                <ul id="nav-menu">
+                    <li><a href="/jamateislami/index.html">صفحہ اول</a></li>
+                    <li><a href="/jamateislami/dawat.html">تعارف  </a></li>
+                    <li><a href="/jamateislami/qayadat.html" >  قیادت</a></li>
+                    <li><a href="/jamateislami/books.html"> کتب </a> </li>
+                    <li><a href="index.html#contact-us">رابطہ</a></li>
+                      <li><a href="/jamateislami/iqtasab.html"> دیگر  </a></li>
+                       <li><a href="/jamateislami/voter.html"  >   ووٹر بنیں      </a></li> 
+                </ul>
+               
+            </nav>
+</header>
+   
 
 <div class="top-bar"></div>
 
@@ -125,6 +313,40 @@
         <small>جماعت اسلامی پاکستان</small>
     </div>
 </div>
+ <footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-column contact-info">
+            <h3>رابطہ کی تفصیلات</h3>
+            <p><i class="fas fa-map-marker-alt"></i> مرکزی دفتر، لاہور 54600</p>
+            <p><i class="fas fa-phone-alt"></i> +92 42 35432194</p>
+            <p><i class="fas fa-envelope"></i> tanzeem.jamaat@gmail.com</p>
+        </div>
 
+        <div class="footer-column quick-links">
+            <h3>فوری لنکس</h3>
+            <ul>
+                <li><a href="/jamateislami/dastoor.html">دستور</a></li>
+                <li><a href="/jamateislami/shauba.html">شعبہ جات</a></li>
+                <li><a href="/jamateislami/books.html">ڈیجیٹل لائبریری</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column social-media">
+            <h3>سوشل میڈیا</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/JIPOfficial1/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/jipofficial?lang=en"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 تحریک اسلامی۔ تمام حقوق محفوظ ہیں۔</p>
+    </div>
+</footer>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+            
 </body>
 </html>

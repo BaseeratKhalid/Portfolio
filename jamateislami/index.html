@@ -69,6 +69,11 @@ header .container {
     color: #FFD700; /* Gold */
     margin-left: 10px;
 }
+.logo img {
+  height: 80px;    /* Control the height of your logo */
+  width: 20;     /* Maintains aspect ratio */
+  display: block;
+}
 nav ul {
     list-style: none;
     margin: 0;
@@ -382,7 +387,170 @@ footer i {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     border: 3px solid #FFD700; /* Gold border around the image */
 }
+.sidebar { flex: 1; }
 
+.sidebar-box {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-top: 4px solid var(--gold);
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* Book Card Styling */
+.book-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-10px);
+}
+
+.book-img img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.btn-download {
+    display: inline-block;
+    background: #007a3d;
+    color: white;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* Dastoor Box Styling (The Highlight Box) */
+.dastoor-box {
+    background: linear-gradient(135deg, #04093f 10%, #d9e76a 100%);
+    color: white;
+    padding: 80px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    grid-column: span 2; /* Spans across two columns */
+}
+
+@media (max-width: 768px) {
+    .dastoor-box { grid-column: span 1; }
+}
+
+.btn-view-dastoor {
+    display: inline-block;
+    margin-top: 20px;
+    background: #ffcc00;
+    color: #333;
+    padding: 10px 25px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn-view-dastoor:hover {
+    background: #fff;
+    color: #0bad2b;
+}
+/* نیوز لیٹر اسٹائلز */
+.newsletter-section {
+    padding: 60px 0;
+    background-color: #f4f4f4;
+    direction: rtl; /* اردو کے لیے دائیں سے بائیں */
+}
+
+.newsletter-box {
+    background: linear-gradient(135deg, #008000, #004d00);
+    padding: 40px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.newsletter-content h2 {
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.newsletter-content p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+.newsletter-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    background: white;
+    padding: 5px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.input-group input {
+    flex: 1;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    outline: none;
+    font-family: inherit;
+}
+
+.btn-subscribe {
+    background: #008000;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-subscribe:hover {
+    background: #ffd700; /* سنہرا رنگ برائے توجہ */
+    color: #004d00;
+}
+
+#subscribeMessage {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+/* موبائل کے لیے سیٹنگ */
+@media (max-width: 600px) {
+    .input-group {
+        flex-direction: column;
+        background: transparent;
+        border-radius: 0;
+    }
+    .input-group input {
+        border-radius: 50px;
+        margin-bottom: 10px;
+    }
+}
 /* --- Responsiveness for Maududi Section --- */
 @media (max-width: 992px) {
     /* Stack the image and text vertically on tablets/mobiles */
@@ -402,17 +570,22 @@ footer i {
     <header>
         <div class="container">
             <div class="logo">
-                <i class="fas fa-handshake"></i>
+            
+        <img src="/jamateislami/images/jamaat_islami_harm_logo1-removebg-preview.png" >
+  
+           
+                 <span> جماعتِ اسلامی پاکستان</span> 
                 <h1>تحریک اسلامی</h1>
             </div>
             <nav>
                 <ul id="nav-menu">
-                    <li><a href="#home">صفحہ اول</a></li>
+                    <li><a href="/jamateislami/index.html">صفحہ اول</a></li>
                     <li><a href="/jamateislami/dawat.html">تعارف  </a></li>
                     <li><a href="/jamateislami/qayadat.html" >  قیادت</a></li>
-                    <li><a href="/jamateislami/khabar.html">خبریں</a></li>
-                    <li><a href="#contact">رابطہ</a></li>
-                      <li><a href="/jamateislami/books.html"> دیگر  </a></li>
+                    <li><a href="/jamateislami/books.html"> کتب </a> </li>
+                    <li><a href="#contact-us">رابطہ</a></li>
+                      <li><a href="/jamateislami/iqtasab.html"> دیگر  </a></li>
+                       <li><a href="/jamateislami/voter.html"  >   ووٹر بنیں      </a></li> 
                 </ul>
                 <button class="nav-toggle" id="nav-toggle">
                     <i class="fas fa-bars"></i>
@@ -424,10 +597,12 @@ footer i {
     <main>
         <section id="home" class="hero">
             <div class="container">
-                <h2>عدل و انصاف کی بنیاد پر ایک نیا پاکستان!</h2>
+                
+                <h2>عدل و انصاف کی بنیاد پر                  </h2>
+                 
                 <p>قرآن و سنت کی روشنی میں، ایک فلاحی ریاست کی تعمیر ہمارا مقصد ہے۔</p>
                 <a href="/jamateislami/mansur.html" class="btn primary-btn">منشور دیکھیں</a>
-                <a href="#about" class="btn secondary-btn">مزید جانیں</a>
+                <a href="/jamateislami/baniqayadat.html" class="btn secondary-btn">مزید جانیں</a>
             </div>
         </section>
 
@@ -476,6 +651,7 @@ footer i {
                 </div>
             </div>
         </section>
+       
         <section id="manifesto" class="section manifesto-section">
             <div class="container">
                 <h3>منشور کے اہم نکات</h3>
@@ -501,26 +677,52 @@ footer i {
                         <p>خواتین کے وراثتی حقوق کی ضمانت اور نوجوانوں کے لیے روزگار کے نئے مواقع۔</p>
                     </div>
                 </div>
-                <a href="#" class="btn primary-btn centered-btn">مکمل منشور ڈاؤن لوڈ کریں</a>
+                <a href="/jamateislami/mansur.html" class="btn primary-btn centered-btn">مکمل منشور ڈاؤن لوڈ کریں</a>
             </div>
         </section>
+ 
+
+<div class="dastoor-box">
+            <div class="dastoor-content">
+                <i class="fas fa-book-open fa-3x"></i>
+                <h2>جماعتِ اسلامی کا دستور</h2>
+                <p>جماعتِ اسلامی کے مقاصد، نصب العین اور تنظیمی ڈھانچے کی مکمل تفصیلات یہاں پڑھیں۔</p>
+                <a href="/jamateislami/dastoor.html" class="btn-view-dastoor">دستور پڑھیں</a>
+            </div>
+        </div>
+
+          
+      
 
         <section id="news" class="section news-section">
             <div class="container">
-                <h3>تازہ ترین خبریں</h3>
+                <h3  >  اقتباسات </h3>
                 <div class="news-list">
                     <article class="news-item">
-                        <span class="date">10 دسمبر 2025</span>
-                        <h4>حافظ صاحب کا کامیاب جلسہ: کرپشن کے خلاف بھرپور آواز</h4>
-                        <p>مرکزی امیر نے پریس کانفرنس میں آئندہ کے احتجاجی لائحہ عمل کا اعلان کر دیا۔</p>
-                        <a href="#">مزید پڑھیں <i class="fas fa-arrow-left"></i></a>
+                       
+                        <h4>  اقامت دین، نفاذ شریعت اور اجرائے حدود اللہ کے لیے حکومت چاہنا از سید ابو الاعلیٰ مودودیؒ </h4>  
+                    
+                        <a href="/jamateislami/iqtasab.html">مزید پڑھیں <i class="fas fa-arrow-left"></i></a>
                     </article>
                     <article class="news-item">
-                        <span class="date">05 دسمبر 2025</span>
-                        <h4>صوبائی شوریٰ کا اہم اجلاس، بلدیاتی انتخابات کی تیاری مکمل</h4>
-                        <p>اجلاس میں ملک بھر کی صورتحال کا تفصیلی جائزہ لیا گیا اور تنظیمی معاملات کو حتمی شکل دی گئی۔</p>
-                        <a href="#">مزید پڑھیں <i class="fas fa-arrow-left"></i></a>
+                           <h3  >      رسائل و مسائل </h3>
+                      <br>
+                       <br>
+       <span> ختم نبوت   </span   >
+                       <br>
+                        <a href="/jamateislami/khatamen.html">مزید پڑھیں <i class="fas fa-arrow-left"></i></a>
+                          <br> 
+                        <br>
+                        <span>  حضرت علیؓ کی امیدواری خلافت؟ </span> 
+                        <br> 
+                        <a href="/jamateislami/imam.html">مزید پڑھیں <i class="fas fa-arrow-left"></i></a>
+                           <br>
+                           <br>     
+                        <span>  علم غیب رسل</span>
+                        <br> 
+                        <a href="/jamateislami/ilm.html">مزید پڑھیں <i class="fas fa-arrow-left"></i></a> 
                     </article>
+                    
                 </div>
             </div>
         </section>
@@ -528,52 +730,89 @@ footer i {
         <section class="cta-section">
             <div class="container">
                 <h3>ملک کی ترقی میں اپنا کردار ادا کریں</h3>
-                <a href="#" class="btn primary-btn cta-btn">رضاکار بنیں</a>
+                <br> 
+                <a href="/jamateislami/volunteer.html" class="btn primary-btn cta-btn">رضاکار بنیں</a>
             </div>
         </section>
 
+        <section class="newsletter-section">
+    <div class="container">
+        <div class="newsletter-box">
+            <div class="newsletter-content">
+                <h2>تازہ ترین اپڈیٹس حاصل کریں</h2>
+                <p>جماعتِ اسلامی کی سرگرمیوں، خبروں اور نئے پروگراموں سے باخبر رہنے کے لیے ہمارا نیوز لیٹر سبسکرائب کریں۔</p>
+            </div>
+            
+            <form id="newsletterForm" class="newsletter-form">
+                <div class="input-group">
+                    <input type="email" id="subscriberEmail" placeholder="اپنا ای میل ایڈریس لکھیں..." required>
+                    <button type="submit" class="btn-subscribe">سبسکرائب کریں</button>
+                </div>
+            </form>
+            
+            <div id="subscribeMessage" class="hidden"></div>
+        </div>
+    </div>
+</section>
+
     </main>
 
-    <footer>
+    <footer id="contact-us">
+         
         <div class="container">
+              
             <div class="footer-grid">
                 <div>
                     <h4>رابطہ کی تفصیلات</h4>
                     <p><i class="fas fa-map-marker-alt"></i> مرکزی دفتر، لاہور 54600</p>
-                    <p><i class="fas fa-phone"></i> +92 42 1234 5678</p>
-                    <p><i class="fas fa-envelope"></i> info@tehreekislami.org</p>
+                    <p><i class="fas fa-phone"></i>  35432194 42 92+ </p>
+                    <p><i class="fas fa-envelope"></i> tanzeem.jamaat@gmail.com </p>
                 </div>
                 <div>
                     <h4>فوری لنکس</h4>
                     <ul>
-                        <li><a href="#">دستور</a></li>
-                        <li><a href="#">شعبہ جات</a></li>
-                        <li><a href="#">ڈیجیٹل لائبریری</a></li>
+                        <li><a href="/jamateislami/dastoor.html">دستور</a></li>
+                        <li><a href="/jamateislami/shauba.html">شعبہ جات</a></li>
+                        <li><a href="/jamateislami/books.html">ڈیجیٹل لائبریری</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>سوشل میڈیا</h4>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/JIPOfficial1/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/jipofficial?lang=en"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
+            
+
             <div class="copyright">
                 <p>&copy; 2025 تحریک اسلامی۔ تمام حقوق محفوظ ہیں۔</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+
     <script>
         document.getElementById('nav-toggle').onclick = function() {
     var menu = document.getElementById('nav-menu');
     // Toggle the 'active' class to show/hide the menu
     menu.classList.toggle('active');
 };
-
+document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const email = document.getElementById('subscriberEmail').value;
+    const message = document.getElementById('subscribeMessage');
+    
+    // کامیابی کا پیغام
+    message.innerHTML = `شکریہ! آپ کو ${email} پر جلد ہی تازہ ترین خبریں موصول ہونا شروع ہو جائیں گی۔`;
+    message.classList.remove('hidden');
+    
+    // فارم ری سیٹ کریں
+    this.reset();
+});
 // Optional: Hide menu when a link is clicked (useful for single-page design)
 var navLinks = document.querySelectorAll('#nav-menu a');
 navLinks.forEach(link => {

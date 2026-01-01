@@ -16,14 +16,16 @@
             padding: 0;
             background-color: #F8F8F8; /* Light background */
             color: #333;
-            line-height: 1.8;
+            line-height: 1.9;
         }
         .container {
-            width: 90%;
+          
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
         }
+       
+
         h2 { 
             color: #0A2B4C; /* Deep Blue */
             font-size: 2.5rem;
@@ -78,6 +80,34 @@
             color: #FFD700; /* Gold icon */
             margin-left: 10px;
         }
+              .intro-nav-dropdown {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+        #intro-select {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 1.1rem;
+            padding: 10px 15px;
+            border: 2px solid #0A2B4C;
+            border-radius: 5px;
+            background-color: white;
+            color: #0A2B4C;
+            width: 100%;
+            max-width: 400px;
+            cursor: pointer;
+            text-align: right;
+            direction: rtl;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url('data:image/svg+xml;charset=UTF8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23FFD700" d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: left 10px center;
+        }
+        #intro-select:focus { border-color: #FFD700; outline: none; }
+        .sr-only { display: none; } 
         
         /* Responsive design for grid */
         @media (max-width: 768px) {
@@ -92,11 +122,174 @@
                 order: -1; /* Move facts to the top on mobile */
             }
         }
-    </style>
+        footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    padding: 40px  20px ;
+    font-size: 0.95rem;
+     max-width: 1200px;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #444;
+}
+footer h4 {
+    color: #FFD700; /* Gold */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+footer ul li a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+}
+footer ul li a:hover {
+    color: #FFD700;
+}
+footer i {
+    margin-left: 8px;
+    color: #FFD700;
+}
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+.social-links a:hover {
+    color: #FFD700;
+}
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.85rem;
+}
 
+          .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background:  #0A2B4C;
+    color: white;
+    backdrop-filter: blur(10px); /* Beautiful blur effect */
+    border-bottom: 2px solid #008000; /* Jamaat-e-Islami Green */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+}
+
+.main-header a {
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.main-header a:hover {
+    color: #008000;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo i {
+    font-size: 2rem;
+     color: #FFD700; /* Gold */
+    margin-left: 10px;
+}
+.logo img {
+  height: 80px;    /* Control the height of your logo */
+  width: 20;     /* Maintains aspect ratio */
+  display: block;
+ 
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+nav ul li a:hover {
+    background-color: #FFD700; /* Gold on hover */
+    color: #0A2B4C; /* Deep Blue text */
+}
+
+/* Mobile Navigation Toggle */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+    </style>
+    </head>
+<body>
+
+
+<header class="main-header">
+    
+     <div class="logo">
+            
+        <img src="/jamateislami/images/jamaat_islami_harm_logo1-removebg-preview.png" >
+  
+           
+                 <span> جماعتِ اسلامی پاکستان</span> 
+               
+            </div>
+    <nav>
+                <ul id="nav-menu">
+                    <li><a href="/jamateislami/index.html">صفحہ اول</a></li>
+                    <li><a href="/jamateislami/dawat.html">تعارف  </a></li>
+                    <li><a href="/jamateislami/qayadat.html" >  قیادت</a></li>
+                    <li><a href="/jamateislami/books.html"> کتب </a> </li>
+                    <li><a href="index.html#contact-us">رابطہ</a></li>
+                      <li><a href="/jamateislami/iqtasab.html"> دیگر  </a></li>
+                       <li><a href="/jamateislami/voter.html"  >   ووٹر بنیں      </a></li> 
+                </ul>
+               
+            </nav>
+</header>
    
     <div class="container">
         <h2>تعارف جماعت اسلامی پاکستان</h2>
+          <div class="intro-nav-dropdown">
+            <label for="intro-select" class="sr-only">تعارفی سیکشن منتخب کریں:</label>
+            <select id="intro-select" name="تعارفی سیکشن" onchange="window.location.href=this.value">
+                <option value="taruf.html" selected>جماعت (ہمارا تعارف)</option>
+                <option value="dawat.html">دعوت</option>
+                <option value="dastoor.html" >دستور</option>
+                <option value="mansur.html">منشور</option>
+                <option value="shauba.html" >شعبہ جات</option>
+            </select>
+        </div>
         
         <div class="intro-grid">
             
@@ -168,62 +361,39 @@
         </div>
         
     </div>
-<div class="intro-nav-buttons container">
-            <a href="/jamateislami/taruf.html" class="intro-btn active">جماعت</a>
-            <a href="/jamateislami/dawat.html" class="intro-btn">دعوت</a>
-            <a href="/jamateislami/dastoor.html" class="intro-btn">دستور</a>
-            <a href="/jamateislami/mansur.html" class="intro-btn">منشور</a>
-            <a href="/jamateislami/shauba.html" class="intro-btn">شعبہ جات</a>
-        </div>
-        <div class="intro-grid container">
-        <style> 
-        /* --- New Styles for Introduction Buttons --- */
-        .intro-nav-buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-            padding: 20px 0;
-            background-color: #0A2B4C; /* Deep Blue background for the strip */
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
 
-        .intro-btn {
-            text-decoration: none;
-            color: white;
-            background-color: transparent;
-            border: 2px solid white;
-            padding: 10px 20px;
-            margin: 5px 8px; /* Space between buttons */
-            border-radius: 5px;
-            font-weight: 700;
-            transition: all 0.3s;
-            white-space: nowrap; /* Prevent breaking button text */
-        }
+             <footer id="contact-us">
+         
+        <div class="container">
+              
+            <div class="footer-grid">
+                <div>
+                    <h4>رابطہ کی تفصیلات</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> مرکزی دفتر، لاہور 54600</p>
+                    <p><i class="fas fa-phone"></i>  35432194 42 92+ </p>
+                    <p><i class="fas fa-envelope"></i> tanzeem.jamaat@gmail.com </p>
+                </div>
+                <div>
+                    <h4>فوری لنکس</h4>
+                    <ul>
+                        <li><a href="/jamateislami/dastoor.html">دستور</a></li>
+                        <li><a href="/jamateislami/shauba.html">شعبہ جات</a></li>
+                        <li><a href="/jamateislami/books.html">ڈیجیٹل لائبریری</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>سوشل میڈیا</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/JIPOfficial1/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/jipofficial?lang=en"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
 
-        .intro-btn:hover {
-            background-color: #FFD700; /* Gold background on hover */
-            color: #0A2B4C; /* Deep Blue text on hover */
-            border-color: #FFD700;
-        }
-
-        .intro-btn.active {
-            background-color: #FFD700; /* Gold background for the current page/active button */
-            color: #0A2B4C;
-            border-color: #FFD700;
-        }
-
-        /* Responsive adjustments for button strip */
-        @media (max-width: 600px) {
-            .intro-nav-buttons {
-                padding: 15px 10px;
-            }
-            .intro-btn {
-                width: 45%; /* Make buttons take up half the width on small screens */
-                text-align: center;
-                margin: 5px 2%;
-            }
-        }
-     </style>   
+            
+    </footer>
+        
 </body>
 </html>
